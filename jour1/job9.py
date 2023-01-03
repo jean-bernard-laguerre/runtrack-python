@@ -1,6 +1,6 @@
 ma_string = "je suis une string"
 
-if(ma_string.find('e')!= -1):
+if("e" in ma_string):
     print("e present")
 else:
     print("e absent")
