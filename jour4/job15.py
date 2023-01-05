@@ -1,8 +1,8 @@
 def longueur(liste):
-    long = 0
+    compte = 0
     for i in liste:
-        long+=1
-    return long
+        compte+=1
+    return compte
 
 def arrondi(liste):
 
