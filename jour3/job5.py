@@ -6,7 +6,7 @@ def premier(num):
 
 
 def boucle1000():
-    i = 0
+    i = 1
     while (i <= 1000):
         if (premier(i)):
             print(i)

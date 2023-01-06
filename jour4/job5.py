@@ -5,4 +5,4 @@ def remplace(liste):
 L = [8,4,15,67,2]
 print(L[1])
 remplace(L)
-print(L[4])
+print(L[len(L)-1])
