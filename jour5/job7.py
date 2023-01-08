@@ -13,21 +13,28 @@ def plusLoin():
         mot = input("Entrez un mot: ")
         if testMot(mot):
             break
+    
+    print(mot[0:len(mot)])
 
     x = len(mot)-1
     nouveauMot = list(mot)
 
     while x > 0:
 
-        y = x-1
+        if(mot[x] > mot[x-1]):
 
-        while y > 0:
+            y = x
+            while y < len(mot):
 
-            if(mot[x] > mot[y]):
-                nouveauMot[y], nouveauMot[x] = nouveauMot[x], nouveauMot[y]
-                return(''.join(nouveauMot))
+                if mot[x-1] < mot[y] < mot[x]:
+                    nouveauMot[x-1], nouveauMot[y] = nouveauMot[y], nouveauMot[x-1]
+                    return ''.join(nouveauMot[0:y-1]) + ''.join(sorted(nouveauMot[y-1:])) 
 
-            y-=1
+                y +=1
+
+            nouveauMot[x-1], nouveauMot[x] = nouveauMot[x], nouveauMot[x-1]
+            return ''.join(nouveauMot[0:x-1]) + ''.join(sorted(nouveauMot[x-1:]))
+
         x -= 1
 
     return mot
