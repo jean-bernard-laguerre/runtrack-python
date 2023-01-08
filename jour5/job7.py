@@ -24,16 +24,17 @@ def plusLoin():
         if(mot[x] > mot[x-1]):
 
             y = x
+            min = x
+
             while y < len(mot):
 
-                if mot[x-1] < mot[y] < mot[x]:
-                    nouveauMot[x-1], nouveauMot[y] = nouveauMot[y], nouveauMot[x-1]
-                    return ''.join(nouveauMot[0:y-1]) + ''.join(sorted(nouveauMot[y-1:])) 
+                if mot[x-1] < mot[y] < mot[min]:
+                    min = y 
 
                 y +=1
 
-            nouveauMot[x-1], nouveauMot[x] = nouveauMot[x], nouveauMot[x-1]
-            return ''.join(nouveauMot[0:x-1]) + ''.join(sorted(nouveauMot[x-1:]))
+            nouveauMot[x-1], nouveauMot[min] = nouveauMot[min], nouveauMot[x-1]
+            return ''.join(nouveauMot[0:x]) + ''.join(sorted(nouveauMot[x:]))
 
         x -= 1
 
